@@ -58,8 +58,20 @@
 							<a href="."><img src="{{asset('vendor/myzzy/images/logo-topo
 								.png')}}" class="img-marca-topo" /></a>
 							</div>
+							@guest
+							<div class="divMeio2">
+								<a href="register" class="aLinkSession2">CADASTRO</a> <a href="login" class="aLinkSession1">ENTRAR</a>
+							</div>
+							@endguest
+							@auth
+							<div class="divMeio2 color1">
+								<a href="perfil" class="aLinkSession2" title=" Visualizar / Atualizar perfil ">PERFIL</a> <a href="logout" class="aLinkSession1">SAIR</a>
+							</div>
+							<div class="divMeio3 alignCenter">
+								<b>{{auth()->user()->name}}</b><br>Créditos: <span class="spnCreditos">0,00</span>
+							</div>
+							@endauth
 
-							<div class="divMeio2"><a href="register" class="aLinkSession2">CADASTRO</a> <a href="login" class="aLinkSession1">ENTRAR</a></div>
 						</div>
 
 					</div>
@@ -78,7 +90,7 @@
 								<div class="divLinks alignLeft">
 									<a href="boloes" class="aLinkTop" title="Bolões">BOLÕES</a> | <a href="quem-somos" class="aLinkTop" title="Quem somos">QUEM SOMOS</a> | <a href="regras" class="aLinkTop" title="Regras">REGRAS</a>
 								</div>
-								
+
 
 							</div>
 
