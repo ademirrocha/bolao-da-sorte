@@ -25,6 +25,9 @@ body{
 	background-repeat:repeat-x;
 	background-attachment:fixed;
 }
+.invalid-feedback{
+	color: red;
+}
 .header{
 	background-color:#EC81E0;
 	background-image:url('../images/bg-header.png');
@@ -1275,12 +1278,17 @@ a:hover{
 
 @media screen  and (max-width:480px){
 	.divLinksTop,.aLinkTop{ font-size:14px; }
-	.divLinks1,.divLinks2{ padding-top:13px }
+	.divLinks1,.divLinks2{ padding-top:13px; }
 	.divMeio3{ font-size:12px; }
 	.img-marca-topo{ margin-top:30px; }
 	.divInfoOver{ width:100.0%;max-width:350px;margin:0px auto;float:none; }
 	.resp1{ width:100%; }
 	.divData{ margin-top:1px;font-size:13px; }
+}
+
+@media screen and (max-width: 370px){
+	.divData{display: none;}
+	.divLinks1, .divLinks2{width:90%; text-align: left;}
 }
 
 @media screen and (max-width:320px){

@@ -53,3 +53,8 @@ function UpdateCreditos(valCredito){
 		els[i].innerHTML=valCredito;
 	}
 }
+
+
+$('.message a').click(function(){
+   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+});
