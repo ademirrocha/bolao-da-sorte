@@ -186,7 +186,7 @@ a:hover{
 	font-size:18px;
 	color:#005A97 !important;
 }
-.aLinkSession1,.aLinkSession2{
+.aLinkSession1, .aLinkSessionMeio, .aLinkSession2{
 	font-family: 'Oswald', sans-serif;
 	display:block;
 	width:80px;
@@ -195,7 +195,7 @@ a:hover{
 	padding:2px 0 4px 0;
 	float:right;
 	font-size:15px;
-	color:#FFF;
+	color:#FFF !important;
 	background-color:#039145;
 	text-align:center;
 }
@@ -211,7 +211,7 @@ a:hover{
 	border-bottom-left-radius:0px;
 	border-bottom-right-radius:15px;
 }
-.aLinkSession1:hover,.aLinkSession2:hover{
+.aLinkSession1:hover,.aLinkSessionMeio,.aLinkSession2:hover{
 	color:#BCF5FE;
 }
 
@@ -1270,7 +1270,7 @@ a:hover{
 @media screen  and (max-width:640px){
 	.divLinksTop,.aLinkTop{ font-size:16px; }
 	.divLinks1,.divLinks2{ padding-top:14px }
-	.aLinkSession1,.aLinkSession2{ width:70px;font-size:13px; }
+	.aLinkSession1,.aLinkSessionMeio,.aLinkSession2{ width:70px;font-size:13px; }
 	.divTopo{ min-height:108px; }
 	.divData{ margin-top:0px;font-size:14px; }
 	.divFixaSombra{ margin-top:163px; }
@@ -1278,7 +1278,7 @@ a:hover{
 
 @media screen  and (max-width:480px){
 	.divLinksTop,.aLinkTop{ font-size:14px; }
-	.divLinks1,.divLinks2{ padding-top:13px; }
+	.divLinks1,.aLinkSessionMeio,.divLinks2{ padding-top:13px; }
 	.divMeio3{ font-size:12px; }
 	.img-marca-topo{ margin-top:30px; }
 	.divInfoOver{ width:100.0%;max-width:350px;margin:0px auto;float:none; }
@@ -1287,13 +1287,13 @@ a:hover{
 }
 
 @media screen and (max-width: 370px){
-	.divData{display: none;}
+	.divData,.divLinks2{display: none;}
 	.divLinks1, .divLinks2{width:90%; text-align: left;}
 }
 
 @media screen and (max-width:320px){
 	.divLinksTop,.aLinkTop{ font-size:11px; }
 	.divLinks1,.divLinks2{ padding-top:12px }
-	.aLinkSession1,.aLinkSession2{ width:60px;font-size:12px; }
+	.aLinkSession1,.aLinkSessionMeio,.aLinkSession2{ width:60px;font-size:12px; }
 	.divData{ margin-top:0px;font-size:12px; }
 }

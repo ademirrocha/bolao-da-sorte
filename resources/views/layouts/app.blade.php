@@ -32,6 +32,10 @@
 
 	<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+
+	<link rel="stylesheet" type="text/css" href="{{asset('vendor/myzzy/css/cards-grid.css')}}" />
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
 	
 
 	<script type="text/javascript" src="{{asset('vendor/myzzy/js/jquery.1.11.0.min.js')}}"></script>
@@ -39,6 +43,10 @@
 	<script type="text/javascript" src="{{asset('vendor/myzzy/js/scripts.js')}}"></script>
 
 	@yield('css')
+
+	
+
+
 </head>
 
 <body>
@@ -67,7 +75,10 @@
 					@auth
 					<div class="divMeio2 color1">
 						<a href="perfil" class="aLinkSession2" title=" Visualizar / Atualizar perfil ">PERFIL</a> 
-						<a href="{{ url('logout') }}" class="aLinkSession1" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">SAIR</a>
+						@can('admin')
+						<a href="{{route('admin/dashboard')}}" class="aLinkSessionMeio" title=" Visualizar / Atualizar perfil ">ADMIN</a> 
+						@endcan
+						<a href="{{ url('logout') }}" class="aLinkSession1" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">SAIR <i class="fas fa-sign-out-alt" ></i></a>
 						<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 							@csrf
 						</form>
@@ -92,20 +103,20 @@
 
 						
 
-							<div class="divLinks1 alignLeft">
-								<a href="boloes" class="aLinkTop" title="Bolões">BOLÕES</a> | <a href="quem-somos" class="aLinkTop" title="Quem somos">QUEM SOMOS</a> | <a href="regras" class="aLinkTop" title="Regras">REGRAS</a>
-							</div>
-							@guest
-							<div class="divLinks2 alignCenter">
-								<div class="divData">Hoje, {{date('d/m/Y')}}</div>			
-							</div>
-							@endguest
-							@auth
-							<div class="divLinks2 alignCenter">
-								<a href="creditos" class="aLinkTop" title="Visualizar / Inserir créditos">CRÉDITOS</a> | <a href="apostas" class="aLinkTop">APOSTAS</a> | <a href="premios" class="aLinkTop">PRÊMIOS</a>
-							</div>
-							@endauth
+						<div class="divLinks1 alignLeft">
+							<a href="boloes" class="aLinkTop" title="Bolões">BOLÕES</a> | <a href="quem-somos" class="aLinkTop" title="Quem somos">QUEM SOMOS</a> | <a href="regras" class="aLinkTop" title="Regras">REGRAS</a>
 						</div>
+						@guest
+						<div class="divLinks2 alignCenter">
+							<div class="divData">Hoje, {{date('d/m/Y')}}</div>			
+						</div>
+						@endguest
+						@auth
+						<div class="divLinks2 alignCenter">
+							<a href="creditos" class="aLinkTop" title="Visualizar / Inserir créditos">CRÉDITOS</a> | <a href="apostas" class="aLinkTop">APOSTAS</a> | <a href="premios" class="aLinkTop">PRÊMIOS</a>
+						</div>
+						@endauth
+					</div>
 
 					
 
