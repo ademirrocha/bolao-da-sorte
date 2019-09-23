@@ -6,9 +6,41 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+use App\Models\Permissoes\Permission;
+use App\Models\Permissoes\Role;
+
 class User extends Authenticatable
 {
     use Notifiable;
+
+    public function roles(){
+
+        return $this->belongsToMany(Role::class);
+
+    }
+
+
+    public function hasPermission(Permission $permission){
+
+         return $this->hasAnyRoles($permission->roles);
+
+
+    }
+
+
+    public function hasAnyRoles($roles){
+
+       
+        if ( is_array($roles) || is_object($roles)  ){
+            foreach ($roles as $role) {
+
+                return $this->hasAnyRoles($role->nome);
+            }
+        }
+
+        return $this->roles->contains('nome', $roles);
+        
+    }
 
     /**
      * The attributes that are mass assignable.

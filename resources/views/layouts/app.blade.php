@@ -57,7 +57,7 @@
 				<div class="divContent">
 
 					<div class="divMeio1">
-						<a href=""><img src="{{asset('vendor/myzzy/images/logo-topo.png')}}" class="img-marca-topo" /></a>
+						<a href="{{url('/')}}"><img src="{{asset('vendor/myzzy/images/logo-topo.png')}}" class="img-marca-topo" /></a>
 					</div>
 					@guest
 					<div class="divMeio2">

@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('/boloes', 'Boloes\BolaoController@index')->name('boloes');
+
 Route::get('/', function () {
     return view('index');
 });
@@ -18,3 +20,4 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
